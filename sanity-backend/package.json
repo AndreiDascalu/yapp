@@ -20,12 +20,14 @@
     "react-dom": "^18.2.0",
     "react-is": "^18.2.0",
     "sanity": "^3.16.7",
-    "styled-components": "^5.3.9"
+    "styled-components": "^5.3.9",
+    "tailwindcss": "^3.3.3"
   },
   "devDependencies": {
     "@sanity/eslint-config-studio": "^3.0.1",
     "@types/react": "^18.0.25",
     "@types/styled-components": "^5.1.26",
+    "@types/tailwindcss": "^3.1.0",
     "eslint": "^8.6.0",
     "prettier": "^3.0.2",
     "typescript": "^5.1.6"
