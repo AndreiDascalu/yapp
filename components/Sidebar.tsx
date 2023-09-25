@@ -5,6 +5,7 @@ import Link from 'next/dist/client/link'
 import GoogleLogin from 'react-google-login'
 import { AiFillHome, AiOutlineMenu } from 'react-icons/ai'
 import {ImCancelCircle} from 'react-icons/im'
+import { render } from 'react-dom'
 
 const Sidebar = () => {
   const [showSidebar, setshowSidebar] = useState(true)
@@ -42,6 +43,24 @@ const Sidebar = () => {
               <p className='text-gray-400'>
                 Log in to like and comment on videos
               </p>
+              <div className='pr-4'>
+                <GoogleLogin
+                  clientId=''
+                  render={(renderProps) =>(
+                    <button onClick={renderProps.onClick} disabled={renderProps.disabled}
+                    className='bg-white text-lg text-[#ed2647] border-[1px] border-[#ed2647]
+                    font-semibold px-6 py-3 rounded-md outline-none w-full mt-3 hover:text-white
+                    hover:bg-[#ed2647] cursor-pointer'
+                    >
+                      Log in
+                    </button>
+
+                  )}
+                  onSuccess={() => {}}
+                  onFailure={() => {}}
+                  cookiePolicy='single_host_origin'
+                />
+              </div>
             </div>
           )}
         </div>
