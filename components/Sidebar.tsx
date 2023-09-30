@@ -47,7 +47,7 @@ const Sidebar = () => {
               </p>
               <div className='pr-4'>
                 <GoogleLogin
-                  clientId=''
+                  clientId='503060615313-6ikfvcvijakchtlbqup35vti55duoq98.apps.googleusercontent.com'
                   render={(renderProps) =>(
                     <button onClick={renderProps.onClick} disabled={renderProps.disabled}
                     className='bg-white text-lg text-[#ed2647] border-[1px] border-[#ed2647]
