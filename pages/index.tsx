@@ -2,18 +2,27 @@ import Image from 'next/image'
 import type { NextPage } from 'next'
 import { Inter } from 'next/font/google'
 import axios from 'axios';
+import {Video} from '../types'
+import VideoCard from '@/components/VideoCard';
+import NoResults from '@/components/NoResults';
 
-// interface IProps{
-//   videos: 
-// }
+interface IProps{
+  videos: Video[]
+}
+
 
 const inter = Inter({ subsets: ['latin'] })
 
-const Home:NextPage = ({videos}) => {
-  console.log(videos)
+const Home = ({videos} : IProps) => {
   return (
-    <h1 className='text-3xl font-bold underline'>
-      
+    <h1 className='flex flex-col gap-10 videos h-full'>
+      {videos.length ? (
+        videos.map((video:Video) => (
+          <VideoCard post={video} key={video._id}/>
+        ))
+      ): (
+        <NoResults text={'No Videos'}/>
+      )}
     </h1>
   )
 }
@@ -21,7 +30,6 @@ const Home:NextPage = ({videos}) => {
 export const getServerSideProps = async () => {
   const {data} = await axios.get(`http://localhost:3000/api/post`)
 
-  console.log()
   return {
     props: {videos: data}
   }
