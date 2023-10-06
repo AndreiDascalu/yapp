@@ -5,7 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import {HiVolumeUp, HiVolumeOff} from 'react-icons/hi'
 import { BsFillPlayFill, BsFillPauseFill } from 'react-icons/bs'
-import {GoVerified} from 'react-icons/go'
+import {RiVerifiedBadgeFill} from 'react-icons/ri'
 import { useState } from 'react'
 
 interface IProps {
@@ -53,7 +53,7 @@ const onVolumePress = () => {
                         <div className='flex items-center gap-2'>
                             <p className='flex gap-2 items-center md:text-md font-bold text-bold'>
                               {post.postedBy.username}  {' '}
-                              <GoVerified className = 'text-blue-400 text-md'/>
+                              <RiVerifiedBadgeFill className = 'text-blue-400 text-md'/>
                             </p>
                             <p className='capitalize font-medium text-xs text-gray-500 hidden md:block'>
                             {post.postedBy.username}

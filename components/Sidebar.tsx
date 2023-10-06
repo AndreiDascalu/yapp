@@ -2,7 +2,9 @@ import React, {useState} from 'react'
 import {NextPage} from 'next'
 import { useRouter } from 'next/dist/client/router'
 import Link from 'next/dist/client/link'
-import GoogleLogin from 'react-google-login'
+// import GoogleLogin from 'react-google-login'
+import { GoogleOAuthProvider } from '@react-oauth/google';
+import { GoogleLogin } from '@react-oauth/google';
 import { AiFillHome, AiOutlineMenu } from 'react-icons/ai'
 import {ImCancelCircle} from 'react-icons/im'
 import SuggestedAccounts from './SuggestedAccounts'
@@ -13,8 +15,6 @@ const Sidebar = () => {
   const [showSidebar, setshowSidebar] = useState(true)
   const normalLink = 'flex items-center gap-3 hover p-3 justify-center xl:justify-start cursor-pointer font-semibold text-[#ed2647] hover:bg-gray-100'
   const userProfile = false
-  
-
   return (
     <div>
       <div className='block xl:hidden m-2 ml-4 mt-3 text-xl'
@@ -47,6 +47,13 @@ const Sidebar = () => {
               </p>
               <div className='pr-4'>
                 <GoogleLogin
+                onSuccess={(response) => (console.log(response))}
+                onError={() => console.log('An error occurred during login')}
+                />
+                
+
+
+                {/* <GoogleLogin
                   clientId='503060615313-6ikfvcvijakchtlbqup35vti55duoq98.apps.googleusercontent.com'
                   render={(renderProps) =>(
                     <button onClick={renderProps.onClick} disabled={renderProps.disabled}
@@ -61,7 +68,7 @@ const Sidebar = () => {
                   onSuccess={() => {}}
                   onFailure={() => {}}
                   cookiePolicy='single_host_origin'
-                />
+                /> */}
               </div>
             </div>
           )}
