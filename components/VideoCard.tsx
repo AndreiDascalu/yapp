@@ -69,8 +69,8 @@ const onVolumePress = () => {
             <div 
             onMouseEnter={() => setisHover(true)} onMouseLeave={() => setisHover(false)}
             >
-                <Link href='/'>
-                    <video src={post.video.asset.url} loop ref = {videoRef} className='lg:w[600px] h-[300px] md:h-[400px] lg:h-[530px] w-[250px] cursor-pointer bg-gray-100 rounded-3xl'>
+                <Link href={`detail/${post._id}`}>
+                    <video src={post.video.asset.url} loop ref = {videoRef} className='lg:w-[600px] h-[300px] md:h-[400px] lg:h-[530px] w-[250px] cursor-pointer bg-gray-100 rounded-3xl'>
                     </video>
                 
                 {isHover && (
